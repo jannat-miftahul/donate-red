@@ -39,7 +39,57 @@
 </head>
 
 <body class="font-roboto">
+    <!-- navbar -->
+    <nav class="sticky top-0 backdrop-blur-md bg-white/45 z-50">
+        <div class="navbar w-10/12 mx-auto flex justify-between py-4 px-0">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        <li class="hover:text-red-700"><a class="hover:bg-transparent" href="#">Home</a></li>
+                        <li class="hover:text-red-700"><a class="hover:bg-transparent" href="#about">About</a></li>
+                        <li class="hover:text-red-700"><a class="hover:bg-transparent"
+                                href="#how-it-works">Donations</a></li>
+                        <li class="hover:text-red-700"><a class="hover:bg-transparent" href="#footer">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="#" class="text-3xl text-red-500 font-bold mr-4">DonateRed</a>
+            </div>
 
+            <div class="form-control mr-6 hidden md:flex h-10">
+                <label class="input input-bordered flex items-center gap-2">
+                    <input type="text" class="grow" placeholder="Search" />
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                        class="h-4 w-4 opacity-70">
+                        <path fill-rule="evenodd"
+                            d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </label>
+            </div>
+
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1">
+                    <li class="hover:text-primaryRedDark"><a class="" href="#">Home</a></li>
+                    <li class="hover:text-primaryRedDark"><a class="" href="#about">About</a></li>
+                    <li class="hover:text-primaryRedDark"><a class="" href="#how-it-works">Donations</a></li>
+                    <li class="hover:text-primaryRedDark"><a class="" href="#footer">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="navbar-end">
+                <a href="#" class="btn bg-primaryRedDark text-white hover:bg-secondaryGold px-8">Join Us</a>
+            </div>
+        </div>
+    </nav>
 </body>
 
 </html>
