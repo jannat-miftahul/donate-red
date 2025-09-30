@@ -5,13 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register | DonateRed</title>
-    <!-- google fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
-    <!-- tailwind css and daisy ui -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS & DaisyUI -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -22,7 +21,7 @@
                     colors: {
                         primaryRedDark: '#800000',
                         secondaryGold: '#B79455',
-                        background: '#DAD4B5',
+                        background: '#F8F6F1',
                         accent: '#F2E8C6'
                     },
                     fontFamily: {
@@ -34,50 +33,78 @@
     </script>
 </head>
 
-<body class="font-roboto bg-gray-100">
-    <!-- navbar -->
-    <nav class="sticky top-0 backdrop-blur-md bg-white/45 z-50">
-        <div class="navbar w-10/12 mx-auto flex justify-between py-4 px-0">
-            <div class="navbar-start">
-                <a href="index.html" class="text-3xl text-red-500 font-bold hover:bg-transparent mr-4">DonateRed</a>
-            </div>
+<body class="font-roboto bg-gradient-to-br from-red-50 via-white to-red-100 min-h-screen flex flex-col">
 
+    <!-- Navbar -->
+    <nav class="sticky top-0 backdrop-blur-md bg-white/70 border-b border-gray-200 shadow-sm z-50">
+        <div class="navbar w-11/12 mx-auto flex justify-between py-3">
+            <div class="navbar-start">
+                <a href="index.html"
+                    class="text-3xl text-primaryRedDark font-extrabold tracking-tight hover:text-secondaryGold transition">DonateRed</a>
+            </div>
             <div class="navbar-end">
-                <a href="login.html" class="btn bg-primaryRedDark text-white hover:bg-secondaryGold px-8">Join Us</a>
+                <a href="login.html"
+                    class="btn bg-primaryRedDark text-white hover:bg-secondaryGold hover:text-black rounded-full px-6 transition-all">Join
+                    Us</a>
             </div>
         </div>
     </nav>
 
-    <!-- Register form -->
-    <div class="min-h-screen flex items-center justify-center">
-        <div class="bg-white p-10 rounded-lg shadow-lg w-full max-w-md">
-            <h2 class="text-2xl font-bold text-center text-primaryRedDark mb-6">Register for DonateRed</h2>
-            <form>
-                <div class="mb-4">
-                    <label for="name" class="block text-gray-700">Name</label>
-                    <input type="text" id="name" name="name" class="input input-bordered w-full mt-2" required>
+    <!-- Register Form -->
+    <div class="flex-grow flex items-center justify-center px-4 my-8">
+        <div
+            class="bg-white/80 backdrop-blur-lg p-10 rounded-2xl shadow-2xl w-full max-w-md border border-gray-200 hover:shadow-red-200 transition-all">
+            <h2 class="text-3xl font-bold text-center text-primaryRedDark mb-2">Create an Account</h2>
+            <p class="text-center text-gray-600 mb-8">Join <span
+                    class="font-semibold text-primaryRedDark">DonateRed</span> and
+                start making a difference today ❤️</p>
+
+            <form class="space-y-6">
+                <div>
+                    <label for="name" class="block text-gray-700 font-medium">Full Name</label>
+                    <input type="text" id="name" name="name"
+                        class="input input-bordered w-full mt-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primaryRedDark transition"
+                        placeholder="Enter your full name" required>
                 </div>
-                <div class="mb-4">
-                    <label for="email" class="block text-gray-700">Email</label>
-                    <input type="email" id="email" name="email" class="input input-bordered w-full mt-2" required>
+                <div>
+                    <label for="email" class="block text-gray-700 font-medium">Email Address</label>
+                    <input type="email" id="email" name="email"
+                        class="input input-bordered w-full mt-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primaryRedDark transition"
+                        placeholder="you@example.com" required>
                 </div>
-                <div class="mb-4">
-                    <label for="password" class="block text-gray-700">Password</label>
-                    <input type="password" id="password" name="password" class="input input-bordered w-full mt-2"
-                        required>
+                <div>
+                    <label for="password" class="block text-gray-700 font-medium">Password</label>
+                    <input type="password" id="password" name="password"
+                        class="input input-bordered w-full mt-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primaryRedDark transition"
+                        placeholder="••••••••" required>
+                    <p class="text-xs text-gray-500 mt-1">Use at least 8 characters with a mix of letters & numbers.</p>
                 </div>
-                <div class="mb-6">
-                    <label for="confirm-password" class="block text-gray-700">Confirm Password</label>
+                <div>
+                    <label for="confirm-password" class="block text-gray-700 font-medium">Confirm Password</label>
                     <input type="password" id="confirm-password" name="confirm-password"
-                        class="input input-bordered w-full mt-2" required>
+                        class="input input-bordered w-full mt-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primaryRedDark transition"
+                        placeholder="••••••••" required>
                 </div>
-                <button type="submit" onsubmit="location.href='dashboard.html'"
-                    class="btn bg-blue-800 hover:bg-blue-500 text-white w-full rounded-full">Register</button>
+                <button type="submit"
+                    class="btn bg-primaryRedDark hover:bg-secondaryGold hover:text-black text-white w-full rounded-full py-3 text-lg font-medium transition-all shadow-md">Register</button>
             </form>
-            <p class="text-center mt-4">Already have an account? <a href="login.html"
-                    class="text-primaryRedDark font-medium hover:underline">Login</a></p>
+
+            <p class="text-center mt-6 text-sm text-gray-600">Already have an account?
+                <a href="login.html" class="text-primaryRedDark font-semibold hover:underline">Login</a>
+            </p>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="py-4 text-center text-gray-600 text-sm bg-white/60 border-t border-gray-200">
+        <!-- © 2025 DonateRed. All rights reserved. -->
+        <div class="w-10/12 mx-auto text-center">
+            <p>&copy; <span id="currentYear"></span> DonateRed. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 </body>
 
 </html>
