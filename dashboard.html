@@ -12,6 +12,8 @@
     <!-- Tailwind & DaisyUI -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <script>
         tailwind.config = {
@@ -34,60 +36,75 @@
 
 <body class="font-roboto bg-background">
     <!-- Navbar -->
-    <nav class="sticky top-0 backdrop-blur-md bg-white/80 border-b border-gray-200 shadow-sm z-50">
-        <div class="navbar container mx-auto flex justify-between py-3 px-6">
+    <nav class="sticky top-0 backdrop-blur-md bg-white/45 border-b border-gray-200 shadow-sm z-50">
+        <div class="navbar w-11/12 mx-auto flex justify-between items-center py-3">
             <a href="index.html"
-                class="text-3xl text-red-700 font-bold tracking-tight hover:text-primaryRedDark transition">DonateRed</a>
-            <a href="index.html"
-                class="btn bg-primaryRedDark text-white hover:bg-secondaryGold hover:text-black rounded-full px-6 transition-all">Logout</a>
+                class="text-2xl sm:text-3xl text-red-700 font-bold tracking-tight hover:text-primaryRedDark transition">DonateRed</a>
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                <!-- Mobile sidebar toggle -->
+                <button class="lg:hidden btn btn-sm bg-primaryRedDark text-white hover:bg-secondaryGold"
+                    onclick="toggleSidebar()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <a href="login.html" class="btn bg-primaryRedDark text-white hover:bg-secondaryGold px-8">Join
+                    Us</a>
+            </div>
         </div>
     </nav>
 
     <!-- Layout -->
     <div class="flex min-h-screen">
         <!-- Sidebar -->
-        <aside class="bg-primaryRedDark text-white w-64 flex flex-col p-6 shadow-lg">
+        <aside id="sidebar"
+            class="fixed lg:static top-0 left-0 h-full lg:h-auto w-64 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out bg-primaryRedDark text-white flex flex-col p-6 shadow-lg z-50">
             <h2 class="text-xl font-bold mb-8">Dashboard</h2>
             <nav class="space-y-3">
                 <button onclick="showSection('overview')"
-                    class="w-full text-left px-4 py-2 rounded-lg hover:bg-accent hover:text-black transition">🏠
-                    Overview</button>
+                    class="w-full text-left px-4 py-2 rounded-lg hover:bg-accent hover:text-black transition">
+                    <i class="fa-solid fa-house mr-2"></i> Overview
+                </button>
                 <button onclick="showSection('donations')"
-                    class="w-full text-left px-4 py-2 rounded-lg hover:bg-accent hover:text-black transition">💉
-                    Donations</button>
+                    class="w-full text-left px-4 py-2 rounded-lg hover:bg-accent hover:text-black transition">
+                    <i class="fa-solid fa-syringe mr-2"></i> Donations
+                </button>
                 <button onclick="showSection('donors')"
-                    class="w-full text-left px-4 py-2 rounded-lg hover:bg-accent hover:text-black transition">🩸
-                    Donors</button>
+                    class="w-full text-left px-4 py-2 rounded-lg hover:bg-accent hover:text-black transition">
+                    <i class="fa-solid fa-hand-holding-droplet mr-2"></i> Donors
+                </button>
                 <button onclick="showSection('recipients')"
-                    class="w-full text-left px-4 py-2 rounded-lg hover:bg-accent hover:text-black transition">🤝
-                    Recipients</button>
-                <a href="index.html" class="block px-4 py-2 rounded-lg hover:bg-red-700 transition">🚪 Logout</a>
+                    class="w-full text-left px-4 py-2 rounded-lg hover:bg-accent hover:text-black transition">
+                    <i class="fa-solid fa-people-group mr-2"></i> Recipients
+                </button>
+                <a href="index.html" class="block px-4 py-2 rounded-lg hover:bg-red-700 transition">
+                    <i class="fa-solid fa-right-from-bracket mr-2"></i> Logout
+                </a>
             </nav>
         </aside>
 
+
         <!-- Main Content -->
-        <main class="flex-1 p-10 space-y-10">
+        <main class="flex-1 p-4 sm:p-6 lg:p-10 space-y-10 lg:ml-0 ml-0 lg:mt-0 mt-14">
             <!-- Overview -->
             <section id="overview" class="section">
-                <h1 class="text-3xl font-bold mb-6 text-primaryRedDark">Welcome to DonateRed Dashboard</h1>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <h1 class="text-2xl sm:text-3xl font-bold mb-6 text-primaryRedDark">Welcome to DonateRed Dashboard</h1>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Card 1 -->
                     <div
                         class="bg-gradient-to-br from-red-100 to-red-50 p-6 rounded-xl shadow hover:shadow-lg transition">
                         <h2 class="text-lg font-semibold text-gray-700">Total Donations</h2>
-                        <p class="text-4xl font-bold text-primaryRedDark mt-2">150</p>
+                        <p class="text-3xl sm:text-4xl font-bold text-primaryRedDark mt-2">150</p>
                     </div>
                     <!-- Card 2 -->
                     <div
                         class="bg-gradient-to-br from-yellow-100 to-yellow-50 p-6 rounded-xl shadow hover:shadow-lg transition">
                         <h2 class="text-lg font-semibold text-gray-700">Total Donors</h2>
-                        <p class="text-4xl font-bold text-yellow-700 mt-2">75</p>
+                        <p class="text-3xl sm:text-4xl font-bold text-yellow-700 mt-2">75</p>
                     </div>
                     <!-- Card 3 -->
                     <div
                         class="bg-gradient-to-br from-green-100 to-green-50 p-6 rounded-xl shadow hover:shadow-lg transition">
                         <h2 class="text-lg font-semibold text-gray-700">Total Recipients</h2>
-                        <p class="text-4xl font-bold text-green-700 mt-2">50</p>
+                        <p class="text-3xl sm:text-4xl font-bold text-green-700 mt-2">50</p>
                     </div>
                 </div>
             </section>
@@ -95,8 +112,8 @@
             <!-- Donations -->
             <section id="donations" class="section hidden">
                 <h2 class="text-2xl font-bold mb-6 text-primaryRedDark">Recent Donations</h2>
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <ul class="divide-y divide-gray-200">
+                <div class="bg-white p-6 rounded-xl shadow-lg overflow-x-auto">
+                    <ul class="divide-y divide-gray-200 min-w-[300px]">
                         <li class="flex items-center justify-between py-4">
                             <div>
                                 <h3 class="font-bold">Lily</h3>
@@ -118,8 +135,8 @@
             <!-- Donors -->
             <section id="donors" class="section hidden">
                 <h2 class="text-2xl font-bold mb-6 text-primaryRedDark">Donors</h2>
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <ul class="divide-y divide-gray-200">
+                <div class="bg-white p-6 rounded-xl shadow-lg overflow-x-auto">
+                    <ul class="divide-y divide-gray-200 min-w-[300px]">
                         <li class="flex items-center justify-between py-4">
                             <div>
                                 <h3 class="font-bold">Lily</h3>
@@ -141,8 +158,8 @@
             <!-- Recipients -->
             <section id="recipients" class="section hidden">
                 <h2 class="text-2xl font-bold mb-6 text-primaryRedDark">Recipients</h2>
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <ul class="divide-y divide-gray-200">
+                <div class="bg-white p-6 rounded-xl shadow-lg overflow-x-auto">
+                    <ul class="divide-y divide-gray-200 min-w-[300px]">
                         <li class="flex items-center justify-between py-4">
                             <div>
                                 <h3 class="font-bold">Alice</h3>
@@ -168,6 +185,11 @@
         function showSection(id) {
             document.querySelectorAll('.section').forEach(sec => sec.classList.add('hidden'));
             document.getElementById(id).classList.remove('hidden');
+        }
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("-translate-x-full");
         }
     </script>
 </body>
