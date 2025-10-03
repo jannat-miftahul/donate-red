@@ -1,23 +1,7 @@
 document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-// Intersection Observer for scroll animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-        }
-    });
-}, observerOptions);
-
-// Observe all fade-in sections
-document.querySelectorAll('.fade-in-section').forEach(section => {
-    observer.observe(section);
-});
+// Note: Fade-in animations removed for better compatibility
+// All sections are now visible by default
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
