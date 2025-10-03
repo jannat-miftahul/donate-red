@@ -102,6 +102,9 @@ The project uses Tailwind CSS with DaisyUI components. You can customize:
 4. Test thoroughly
 5. Submit a pull request
 
-## License
+---
 
-This project is licensed under the MIT License.
+<div align="center">
+  <p>Made with ❤️ by <a href="https://github.com/jannat-miftahul">Miftahul Jannat</a></p>
+  <p>⭐ Star this repo if you find it helpful!</p>
+</div>
