@@ -1,5 +1,3 @@
-document.getElementById('currentYear').textContent = new Date().getFullYear();
-
 // Note: Fade-in animations removed for better compatibility
 // All sections are now visible by default
 

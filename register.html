@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- scripts -->
     <script src="scripts/app.js"></script>
-    <script src="scripts/form.js"></script>
+    <script src="scripts/registerForm.js"></script>
 </head>
 
 <body class="font-roboto bg-gradient-to-br from-red-50 via-white to-red-100 min-h-screen flex flex-col">
@@ -148,6 +148,10 @@
             <p>&copy; <span id="currentYear"></span> DonateRed. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 </body>
 
 </html>

@@ -1,5 +1,3 @@
-document.getElementById('currentYear').textContent = new Date().getFullYear();
-
 // Toggle password visibility
 function togglePassword(fieldId) {
     const passwordInput = document.getElementById(fieldId);
